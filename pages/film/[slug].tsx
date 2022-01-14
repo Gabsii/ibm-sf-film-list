@@ -1,13 +1,12 @@
 import { Page, Text } from "@geist-ui/react";
 import Head from "next/head";
 
-import type {Film} from '../index';
+import type { Film } from '../index';
 import fetchMovies from '../../utils/fetchMovies';
 import slugify from '../../utils/slugify';
 import Link from "next/link";
 
-export default function FilmDetail({ film }: {film: Film}) {
-  console.log(film);
+export default function FilmDetail({ film }: { film: Film }) {
   return (
     <div>
       <Head>
@@ -22,7 +21,7 @@ export default function FilmDetail({ film }: {film: Film}) {
         <Text>{film.director && (<><Text b>Director: </Text>{film.director}</>)}</Text>
         <Text>{film.actor_1 && (<><Text b>Actors: </Text>{`${film.actor_1}, ${film.actor_2}, ${film.actor_3}`}</>)}</Text>
         <Link href="/" passHref>
-          <a style={{marginTop: '20px'}}>Back to Overview</a>
+          <a style={{ marginTop: '20px' }}>Back to Overview</a>
         </Link>
       </Page>
     </div>
